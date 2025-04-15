@@ -57,7 +57,7 @@ resource "aws_route_table_association" "asociacion_rutas" {
 # --- SG para Servidor de Salto ---
 resource "aws_security_group" "sg_salto" {
   name        = "SG-Salto"
-  description = "Permite SSH desde cualquier IP pública"
+  description = "Permite SSH desde cualquier IP publica"
   vpc_id      = aws_vpc.vpc_principal.id
 
   ingress {
@@ -83,7 +83,7 @@ resource "aws_security_group" "sg_salto" {
 # --- SG para Web Servers ---
 resource "aws_security_group" "sg_webserver" {
   name        = "SG-WebServers"
-  description = "Permite HTTP público y SSH desde el servidor de salto"
+  description = "Permite HTTP publico y SSH desde el servidor de salto"
   vpc_id      = aws_vpc.vpc_principal.id
 
   ingress {
@@ -146,11 +146,11 @@ resource "aws_instance" "instancias_web" {
 # --- Salidas ---
 output "ip_publica_salto" {
   value       = aws_instance.servidor_salto.public_ip
-  description = "IP pública del Servidor de Salto"
+  description = "IP publica del Servidor de Salto"
 }
 
 output "ips_publicas_web" {
   value       = aws_instance.instancias_web[*].public_ip
-  description = "IPs públicas de los servidores web"
+  description = "IPs publicas de los servidores web"
 }
 
