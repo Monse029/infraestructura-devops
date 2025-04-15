@@ -43,5 +43,5 @@ def generar_index_html(nombre_host="WebNode-1"):
 
 if __name__ == "__main__":
     configurar_http()
-    generar_index_html("WebNode-1")
+    generar_index_html("WebNode-3")
 
